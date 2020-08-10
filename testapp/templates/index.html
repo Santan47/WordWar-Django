@@ -1,0 +1,215 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>WordWar 0.1</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <div class="mainBody">
+        <div class="mainTemplet">
+            <div class="leftBody">
+                <div class="profile">
+                    <div class="profilePic">
+                        <img src="{% static 'assets/santan.jpeg' %}" alt="Paris" width="100" height="100">
+                    </div>
+                    <div class="userName">
+                        santan kr sharma
+                    </div>
+                </div>
+                <div class="profileNavBar">
+                    <div class="navigationTab " data-id="profile">Profile</div>
+                    <div class="navigationTab active" data-id="Home">Home</div>
+                    <div class="navigationTab" data-id="Notifications">Notifications</div>
+                    <div class="navigationTab" data-id="MyBlogs">My Blogs</div>
+                    <div class="navigationTab" data-id="RealTime">Real Time</div>
+                    <div class="navigationTab" data-id="Security">Security</div>
+                </div>
+            </div>
+            <div class="rightBody">
+                <div class="rightTopBody">
+                    <div class="leftText">
+                        <div>hello santan</div>
+                        <div class="welcomeDesc">What are you writing today?</div>
+                    </div>
+                    <div class="rightText">
+                        <div class="postSomething">Write Here</div>
+                    </div>
+                </div>
+                <div id="userFeedsTemplet" class="rightMainBody">
+                    <div class="userFeeds">
+                        <div class="divTitle">
+                            Feeds
+                        </div>
+                        <div class="feedsData">
+                            <div class="card active">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedDetails">
+                        <div class="divTitle">
+                            Details
+                        </div>
+                        <div class="selectedDetails">
+                            <div class="card">
+                                <div class="cardImg">
+                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="title">
+                                        title of the card
+                                    </div>
+                                    <div class="uploadedBy">
+                                        santan kumar sharma
+                                    </div>
+                                    <div class="dateTime">
+                                        22 july 2020 : 08:37 AM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="postSomethingTemplet" class=" hide">
+                        <div class="divTitle" style="width: 89%; margin-right:10px;">
+                            Upload Your Content
+                        </div>
+                        <div class="postYourContent">
+                            <div class="group">
+                                <input type="text"><span class="highlight"></span><span class="bar"></span>
+                                <label>Title</label>
+                            </div>
+                            <div class="group">
+                                <textarea type="email"></textarea><span class="highlight"></span><span class="bar"></span>
+                                <label>Write Your Content.....</label>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <div id="uploadContent" class="btn-2"><span>Submit</span><i class="fa fa-check" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="./config.js"></script> -->
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
