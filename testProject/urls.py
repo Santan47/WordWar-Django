@@ -17,11 +17,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.urls import path, re_path
 from testapp import views as myview
-# from . import views
+from rest_framework import routers
+
 admin.autodiscover()
+router = routers.DefaultRouter()
+router.register(r'users', myview.UserViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myview.index),
-    path('uploadContentData/', myview.uploadContentData),
+    # path('uploadContentData/', myview.uploadContentData),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
