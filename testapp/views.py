@@ -17,9 +17,9 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     
-# def uploadContentData(request):
-#        print("data is here")
-      # return render(request, "index.html", {"date": today})
+def uploadContentData(request):
+       print("data is here")
+      return render(request, "index.html", {"date": today})
 
 # Create your views here.
 def index(request):
