@@ -22,7 +22,7 @@ def uploadContentData(request):
 
 # Create your views here.
 def index(request):
-   today = datetime.now().date()
-   print(request) 
-   return render(request, "index.html", {"date": today})
+    today = datetime.now()
+    print(request) 
+    return render(request, "navigationBody.html", {"time": today})
    # return HttpResponse("heyo m here")

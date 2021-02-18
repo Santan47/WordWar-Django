@@ -1,0 +1,22 @@
+{% extends "./index.html" %}
+{% load static %}
+{% block content %}
+<div class="leftBody">
+    <div class="profile">
+        <div class="profilePic">
+            <img src="{% static 'assets/santan.jpeg' %}" alt="Paris" width="100" height="100">
+        </div>
+        <div class="userName">
+            santan kr sharma
+        </div>
+    </div>
+    <div class="profileNavBar">
+        <div class="navigationTab " data-id="profile">Profile</div>
+        <div class="navigationTab active" data-id="Home">Home</div>
+        <div class="navigationTab" data-id="Notifications">Notifications</div>
+        <div class="navigationTab" data-id="MyBlogs">My Blogs</div>
+        <div class="navigationTab" data-id="RealTime">Real Time</div>
+        <div class="navigationTab" data-id="Security">Security</div>
+    </div>
+</div>
+{% endblock %}
