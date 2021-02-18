@@ -27,6 +27,6 @@ router.register(r'users', myview.UserViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myview.index),
-    # path('uploadContentData/', myview.uploadContentData),
+    path('', myview.uploadContentData),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

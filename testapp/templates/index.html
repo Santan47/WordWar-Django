@@ -186,6 +186,8 @@
                     </div>
                 </div>
                 <div id="postSomethingTemplet" class=" hide">
+                    <form action = "uploadContentData" method = "POST">
+                    {% csrf_token %} 
                         <div class="divTitle" style="width: 89%; margin-right:10px;">
                             Upload Your Content
                         </div>
@@ -199,9 +201,10 @@
                                 <label>Write Your Content.....</label>
                             </div>
                             <div style="margin-top: 10px;">
-                                <div id="uploadContent" class="btn-2"><span>Submit</span><i class="fa fa-check" aria-hidden="true"></i></div>
+                                <div id="uploadContent" type="submit" class="btn-2"><span>Submit</span><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
+                    </form> 
                 </div>
             </div>
         </div>

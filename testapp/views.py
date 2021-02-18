@@ -18,11 +18,11 @@ class UserViewSet(viewsets.ModelViewSet):
 
     
 def uploadContentData(request):
-       print("data is here")
-      return render(request, "index.html", {"date": today})
+      print(request.POST) 
 
 # Create your views here.
 def index(request):
    today = datetime.now().date()
+   print(request) 
    return render(request, "index.html", {"date": today})
    # return HttpResponse("heyo m here")
