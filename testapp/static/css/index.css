@@ -2,6 +2,7 @@ body{
     margin:0px !important;
     font-family: fantasy;
     height: 100%;
+    /* webkit-font-smoothing: subpixel-antialiased; */
 }
 
 .hide{
@@ -297,6 +298,7 @@ input:focus ~ .highlight {
 textarea:focus ~ .highlight {
 	animation: inputHighlighter 0.3s ease;
 }
+
 
 
 /* Animations */

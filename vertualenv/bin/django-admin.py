@@ -1,4 +1,4 @@
-#!/Users/santan/WorkSpace/practiceProjects/pythonProjects/DjangoProjects/testProject/vertualenv/bin/python3
+#!/Users/santan/WorkSpace/practiceProjects/pythonProjects/DjangoProjects/testProject/virtualenv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

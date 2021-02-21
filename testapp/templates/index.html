@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div id="postSomethingTemplet" class=" hide">
-                    <form action = "uploadContentData" method = "POST">
+                    <!-- <form action = "/uploadContentData" method = "POST">
                     {% csrf_token %} 
                         <div class="divTitle" style="width: 89%; margin-right:10px;">
                             Upload Your Content
@@ -190,7 +190,12 @@
                                 <div id="uploadContent" type="submit" class="btn-2"><span>Submit</span><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
-                    </form> 
+                    </form>  -->
+                    <form action="/get_name" method="post">
+                        <label for="your_name">Your name: </label>
+                        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+                        <input type="submit" value="OK">
+                    </form>
                 </div>
             </div>
         </div>
