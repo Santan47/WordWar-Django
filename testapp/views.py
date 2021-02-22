@@ -6,7 +6,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from testapp.serializers import UserSerializer
-from .form import NameForm
+from testapp.models import tb_content
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -19,7 +19,13 @@ class UserViewSet(viewsets.ModelViewSet):
 
     
 def uploadContentData(request):
-      print(request.POST) 
+    heading = request.POST["title"];
+    contentData = request.POST["content"];
+
+    uploadData = tb_content(userid = 1,Title = heading, content = contentData)
+    uploadData.save();
+
+    return HttpResponse("data saved successfully");
 
 # Create your views here.
 def index(request):
@@ -27,21 +33,3 @@ def index(request):
     print(request) 
     return render(request, "navigationBody.html", {"time": today})
    # return HttpResponse("heyo m here")
-
-def get_name(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-
-    return render(request, 'index.html', {'form': form})

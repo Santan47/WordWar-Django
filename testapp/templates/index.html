@@ -172,29 +172,24 @@
                     </div>
                 </div>
                 <div id="postSomethingTemplet" class=" hide">
-                    <!-- <form action = "/uploadContentData" method = "POST">
-                    {% csrf_token %} 
+                    <form action="uploadContent" method="post">
+                        {%csrf_token%}
                         <div class="divTitle" style="width: 89%; margin-right:10px;">
                             Upload Your Content
                         </div>
                         <div class="postYourContent">
                             <div class="group">
-                                <input type="text"><span class="highlight"></span><span class="bar"></span>
+                                <input type="text" name='title'><span class="highlight"></span><span class="bar"></span>
                                 <label>Title</label>
                             </div>
                             <div class="group">
-                                <textarea type="email"></textarea><span class="highlight"></span><span class="bar"></span>
+                                <textarea type="text" name='content'></textarea><span class="highlight"></span><span class="bar"></span>
                                 <label>Write Your Content.....</label>
                             </div>
                             <div style="margin-top: 10px;">
-                                <div id="uploadContent" type="submit" class="btn-2"><span>Submit</span><i class="fa fa-check" aria-hidden="true"></i></div>
+                                <input value="Submit" type="submit" class="btn-2">
                             </div>
                         </div>
-                    </form>  -->
-                    <form action="/get_name" method="post">
-                        <label for="your_name">Your name: </label>
-                        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                        <input type="submit" value="OK">
                     </form>
                 </div>
             </div>

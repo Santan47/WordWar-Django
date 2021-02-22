@@ -1,6 +1,7 @@
 from django.db import models
 
-class Students(models.Model):
-    firstname= models.CharField(max_length=100)
-    lastname= models.CharField(max_length=100)
-    email= models.CharField(max_length=200)
+class tb_content(models.Model):
+    s_no = models.AutoField(primary_key=True)
+    userid = models.IntegerField()
+    Title= models.CharField(max_length=1000)
+    content= models.TextField()
