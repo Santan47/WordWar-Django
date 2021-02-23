@@ -30,6 +30,7 @@ def uploadContentData(request):
 # Create your views here.
 def index(request):
     today = datetime.now()
-    print(request) 
-    return render(request, "navigationBody.html", {"time": today})
+    contents = tb_content.objects.all()
+    print(contents) 
+    return render(request, "navigationBody.html", {"contents": contents})
    # return HttpResponse("heyo m here")

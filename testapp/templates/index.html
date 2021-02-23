@@ -33,118 +33,24 @@
                             Feeds
                         </div>
                         <div class="feedsData">
-                            <div class="card active">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
+                            {% for feedsData in contents%}
                             <div class="card">
                                 <div class="cardImg">
                                     <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
                                 </div>
                                 <div class="cardDetails">
                                     <div class="title">
-                                        title of the card
+                                        {{feedsData.Title}}
                                     </div>
                                     <div class="uploadedBy">
-                                        santan kumar sharma
+                                        John Elia
                                     </div>
                                     <div class="dateTime">
-                                        {{time}}
+                                        5:29pm
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
-                                </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        {{time}}
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="feedDetails">
