@@ -37,6 +37,8 @@ function wordWarApp() {
             e.stopPropagation();
             $(".card").removeClass("active");
             $(this).addClass("active");
+            let cardId = parseInt($(".active")[1].getAttribute("data-id"));
+            GetContentData(cardId)
         });
 
         // write somthing click
@@ -57,12 +59,11 @@ function wordWarApp() {
     })();
 
 
-    function uploadContentData(title, content) {
-        var url = 'uploadContentData/';
-        var method = 'POST';
+    function GetContentData(contentId) {
+        var url = 'http://127.0.0.1:8000/getActiveData/?s_no=1';
+        var method = 'GET';
         var payload = {
-            "title" : title,
-            "content" : content
+            "s_no" : contentId
         }
         var fnSuccess = function (data) {
             console.log("success",data);

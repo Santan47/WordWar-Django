@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render
 from datetime import datetime
 from django.views.generic import View
@@ -7,6 +7,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from testapp.serializers import UserSerializer
 from testapp.models import tb_content
+
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -34,3 +35,8 @@ def index(request):
     print(contents) 
     return render(request, "navigationBody.html", {"contents": contents})
    # return HttpResponse("heyo m here")
+
+def getActiveData(request):
+    contentId = request.GET["s_no"]
+    content = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = contentId')
+    return JsonResponse({'data': content},safe = False)
