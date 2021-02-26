@@ -1,8 +1,9 @@
 from django.http import HttpResponse,JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from datetime import datetime
 from django.views.generic import View
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User, Group, auth
+from django.contrib import messages
 from rest_framework import viewsets
 from rest_framework import permissions
 from testapp.serializers import UserSerializer
@@ -30,13 +31,52 @@ def uploadContentData(request):
 
 # Create your views here.
 def index(request):
-    today = datetime.now()
     contents = tb_content.objects.all()
-    print(contents) 
-    return render(request, "navigationBody.html", {"contents": contents})
-   # return HttpResponse("heyo m here")
+    return render(request, "index.html", {"contents": contents})
 
 def getActiveData(request):
     contentId = request.GET["s_no"]
     content = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = contentId')
     return JsonResponse({'data': content},safe = False)
+
+def register(request):
+    if request.method == "POST":
+        first_name = request.POST["fname"]
+        last_name = request.POST["lname"]
+        username = request.POST["uname"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        confirmPassword = request.POST["confirmPassword"]
+        
+        if password == confirmPassword:
+            if User.objects.filter(email =email).exists():
+                messages.info(request,"user already exist")
+                return redirect('/register')
+            else:
+                user = User.objects.create_user(username = username, password=password, email= email,first_name = first_name,last_name= last_name)
+                user.save();
+                messages.info(request,"user created successfully.")
+                print("user created")
+                return redirect('login')
+        else:
+            messages.info(request,"User password is not same.")
+            return redirect('/register')
+    else:
+        return render(request, "register.html")
+
+def login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+
+        user = auth.authenticate(username = username, password = password)
+
+        if user is not None:
+            auth.login(request,user)
+            contents = tb_content.objects.all()
+            return redirect("/")
+        else:
+            messages.info(request,"invalid credentials")
+            return redirect("login")
+    else:
+        return render(request, "login.html")

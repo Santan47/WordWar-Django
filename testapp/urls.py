@@ -7,5 +7,6 @@ from testapp import views as myview
 urlpatterns = [
     path('', myview.index,name='index'),
     path('uploadContent', myview.uploadContentData, name='uploadContentData'),
-    path('getActiveData, myview.getActiveData, name='getActiveData')
+    path('register', myview.register, name='register'),
+    path('login', myview.login, name='login')
 ]
