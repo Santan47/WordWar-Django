@@ -184,6 +184,11 @@ body{
     height: 80%;
 }
 
+.userDetailsData{
+    padding: 0 20px;
+    font-size: 16px;
+}
+
 /* ------------------------------------------------------------- */
 .group { 
 	position: relative; 

@@ -27,17 +27,19 @@ def uploadContentData(request):
     uploadData = tb_content(userid = 1,Title = heading, content = contentData)
     uploadData.save();
 
-    return HttpResponse("data saved successfully");
+    return redirect("/");
 
 # Create your views here.
 def index(request):
     contents = tb_content.objects.all()
-    return render(request, "index.html", {"contents": contents})
+    cont = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = '+"1")
+    return render(request, "index.html", {"contents": contents, "details":cont})
 
-def getActiveData(request):
-    contentId = request.GET["s_no"]
-    content = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = contentId')
-    return JsonResponse({'data': content},safe = False)
+def getActiveData(request,card_id):
+    # contentId = request.GET["card_id"]
+    contents = tb_content.objects.all()
+    cont = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = '+card_id)
+    return render(request, "index.html", {"contents": contents, "details":cont})
 
 def register(request):
     if request.method == "POST":
@@ -80,3 +82,7 @@ def login(request):
             return redirect("login")
     else:
         return render(request, "login.html")
+
+def logout(request):
+    auth.logout(request);
+    return redirect("login");

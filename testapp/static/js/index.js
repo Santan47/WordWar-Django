@@ -28,6 +28,17 @@ function wordWarApp() {
                 $("#postSomethingTemplet").addClass("hide");
                 $("#userFeedsTemplet").removeClass("hide");
             }
+            
+            if(this.getAttribute("data-id") == "logout"){
+                window.location = "http://127.0.0.1:8000/" + "logout";
+            }
+            else if(this.getAttribute("data-id") == "login"){
+                window.location = "http://127.0.0.1:8000/" + "login";
+            }
+            // else if(this.getAttribute("data-id") == "register"){
+            //     window.location = location.href + "login";
+            // }
+
 
         });
 
@@ -38,7 +49,8 @@ function wordWarApp() {
             $(".card").removeClass("active");
             $(this).addClass("active");
             let cardId = parseInt($(".active")[1].getAttribute("data-id"));
-            GetContentData(cardId)
+            // GetContentData(cardId)
+            window.location = "http://127.0.0.1:8000/content/" + cardId;
         });
 
         // write somthing click

@@ -13,13 +13,14 @@
 <body>
     <div class="mainBody">
         <div class="mainTemplet">
+            {% if user.is_authenticated %}
             <div class="leftBody">
                 <div class="profile">
                     <div class="profilePic">
                         <img src="{% static 'assets/santan.jpeg' %}" alt="Paris" width="100" height="100">
                     </div>
                     <div class="userName">
-                        santan kr sharma
+                        {{user.first_name}} &nbsp; {{user.last_name}}
                     </div>
                 </div>
                 <div class="profileNavBar">
@@ -27,21 +28,44 @@
                     <div class="navigationTab active" data-id="Home">Home</div>
                     <div class="navigationTab" data-id="Notifications">Notifications</div>
                     <div class="navigationTab" data-id="MyBlogs">My Blogs</div>
-                    <div class="navigationTab" data-id="RealTime">Real Time</div>
-                    <div class="navigationTab" data-id="Security">Security</div>
+                    <!-- <div class="navigationTab" data-id="Security">Register</div> -->
+                    <!-- <div class="navigationTab" data-id="Security">Login</div> -->
+                    <div class="navigationTab" data-id="logout">Logout</div>
                 </div>
             </div>
+            {% else %}
+            <div class="leftBody">
+                <div class="profile">
+                    <div>
+                        <img src="{% static 'assets/wordwar.png' %}" alt="Paris" width="100" height="100">
+                    </div>
+                    <div class="userName" style="padding-top: 10px;">
+                        WORD - WAR
+                    </div>
+                </div>
+                <div class="profileNavBar">
+                    <!-- <div class="navigationTab " data-id="profile">Profile</div> -->
+                    <div class="navigationTab active" data-id="Home">Home</div>
+                    <div class="navigationTab" data-id="Blogs">Blogs</div>
+                    <div class="navigationTab" data-id="about">About</div>
+                    <div class="navigationTab" data-id="search">Search</div>
+                    <div class="navigationTab" data-id="login">Login</div>
+                </div>
+            </div>
+            {% endif %}
             
             <div class="rightBody">
+                {% if user.is_authenticated %}
                 <div class="rightTopBody">
                     <div class="leftText">
-                        <div>hello santan</div>
+                        <div>hello &nbsp; {{user.first_name}}</div>
                         <div class="welcomeDesc">What are you writing today?</div>
                     </div>
                     <div class="rightText">
                         <div class="postSomething">Write Here</div>
                     </div>
                 </div>
+                {% endif %}
                 <div id="userFeedsTemplet" class="rightMainBody">
                     <div class="userFeeds">
                         <div class="divTitle">
@@ -72,28 +96,39 @@
                         <div class="divTitle">
                             Details
                         </div>
+                        
+                        <!-- {% block mydata %} 
+                        
+                        {% endblock%} -->
+                        
                         <div class="selectedDetails">
-                            <div class="card">
-                                <div class="cardImg">
-                                    <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="100" height="100">
+                            {% for active_data in details %}
+                            <div class="card" style="height: 90%;display:block;">
+                                <div style="display: flex;justify-content: flex-start;align-items: center;">
+                                    <div>
+                                        <img src="{% static 'assets/dummy.png' %}" alt="Paris" width="60" height="60">
+                                    </div>
+                                    <div class="userDetailsData">
+                                        <div>John Elia</div>
+                                        <div style="color: #ccc;">6:44 PM</div>
+                                    </div>
                                 </div>
-                                <div class="cardDetails">
-                                    <div class="title">
-                                        title of the card
-                                    </div>
-                                    <div class="uploadedBy">
-                                        santan kumar sharma
-                                    </div>
-                                    <div class="dateTime">
-                                        22 july 2020 : 08:37 AM
-                                    </div>
+                                <br>
+                                <div class="title" style="border-bottom: 1px solid #ccc;">
+                                    {{active_data.Title}}
+                                </div>
+                                <br>
+                                <div>
+                                    {{active_data.content}}
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
+                        
                     </div>
                 </div>
                 <div id="postSomethingTemplet" class=" hide">
-                    <form action="uploadContent" method="post">
+                    <form action="/uploadContent" method="post">
                         {%csrf_token%}
                         <div class="divTitle" style="width: 89%; margin-right:10px;">
                             Upload Your Content
