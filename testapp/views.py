@@ -36,7 +36,7 @@ def index(request):
     return render(request, "index.html", {"contents": contents, "details":cont})
 
 def getActiveData(request,card_id):
-    # contentId = request.GET["card_id"]
+    # contentId = request.GET["card_id"] 
     contents = tb_content.objects.all()
     cont = tb_content.objects.raw('SELECT * FROM testapp_tb_content WHERE s_no = '+card_id)
     return render(request, "index.html", {"contents": contents, "details":cont})
